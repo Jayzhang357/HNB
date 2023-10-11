@@ -1,0 +1,8 @@
+<!-- layer_list_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 上层图层是TextView的背景 -->
+    <item android:drawable="@drawable/solid_white" />
+
+
+</layer-list>

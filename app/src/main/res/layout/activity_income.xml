@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/bill_detail_bj"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+
+
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/ireturn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_retur_wn"></Button>
+
+            <TextView
+                style="@style/txt_samll_mid_bold"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:text="@string/zdxq"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9.3"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+
+
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
+                android:id="@+id/r1"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@drawable/solid_zb">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="36dp"
+
+                    android:src="@drawable/dill_icon_income" />
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="92dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_samll_mid_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textSize="24sp"></TextView>
+
+                    <TextView
+                        style="@style/txt_samll_big_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6643.32"></TextView>
+
+                    <TextView
+                        style="@style/txt_samll_mid_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yuan"
+                        android:textSize="16sp"></TextView>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/txt_samll_mid_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="151dp"
+                    android:text="@string/income"
+                    android:textSize="24sp"></TextView>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_below="@+id/r1"
+                android:scaleType="fitXY"
+                android:src="@drawable/bill_bj_line" />
+
+            <LinearLayout
+                android:id="@+id/r2"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:layout_below="@+id/v1"
+
+
+                android:background="@drawable/solid_zb_b"
+                android:orientation="vertical"
+                android:paddingLeft="20dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/jobname"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/username"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/userphone"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/dj"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/date"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/dzdk"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入收入"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txt_zbxq_bt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+
+                        android:text="@string/bz"></TextView>
+
+                    <TextView
+                        style="@style/txt_zbxq_bt_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+
+                        android:text="@string/income"></TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

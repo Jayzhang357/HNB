@@ -1,0 +1,12 @@
+<!-- custom_spinner_item.xml -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/txt_minsamll_right_g"
+    android:paddingStart="6dp"
+    android:paddingEnd="25dp"
+
+
+    />

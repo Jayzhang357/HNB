@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+            <!-- 将界面抬头颜色设置为白色 -->
+            <item name="android:statusBarColor">@android:color/white</item>
+            <item name="android:windowLightStatusBar">true</item>
+        </style>
+
+    <style name="txt_tj_g_left">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">#44B594</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+
+    <style name="txt_minsamll">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+
+    <style name="btn_center_green">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+    <style name="btn_center_green_10">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+    <style name="txt_left_14_re_b">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="txt_zwlx_g">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:background">@drawable/solid_btn_gw_16</item>
+    </style>
+    <style name="txt_zwlx_w">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:background">@drawable/solid_btn_grayw_16</item>
+    </style>
+
+
+    <style name="txt_rightsamll">
+
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+    <style name="txt_zbxq_bt">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <style name="txt_zbxq_bt_b">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+
+
+
+    <style name="txt_sy_num">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+
+    </style>
+
+
+    <style name="txt_sy_num_s">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+    <style name="txt_sy_num_b">
+
+
+        <item name="android:maxWidth">85dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:autoSizeMaxTextSize">21sp</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|bottom</item>
+        <item name="android:textColor">@color/black</item>
+
+
+    </style>
+    <style name="txt_sy_num_small">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="txt_sy_num_small_b">
+
+        <item name="android:gravity">left|bottom</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="txt_sy_num_small_black_l">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+    <style name="txt_sy_num_small_black_c">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+    <style name="txt_leftminsamll_bold">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+    <style name="txt_samll_right">
+
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">#4D88E5</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+    <style name="txt_minsamll_right">
+
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">#CCCCCC</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="txt_minsamll_right_g">
+
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">#666666 </item>
+        <item name="android:textSize">14sp</item>
+
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="txt_samll_mid_bold">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/bold</item>
+    </style>
+    <style name="txt_samll_big_bold">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="txt_income">
+
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="txt_income_content">
+
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginTop">35dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="txt_samll_mid">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+
+    <style name="txt_samll_mid_mess">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+
+        <item name="android:background">@color/darkblack</item>
+    </style>
+
+
+    <style name="txt_samll_left_t">
+        <item name="android:gravity">left|center_vertical</item>
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+
+
+    </style>
+
+    <style name="txt_samll_left_16">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+
+
+    </style>
+
+    <style name="txt_mediu_left_16">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/medium</item>
+
+    </style>
+    <style name="btn_samll_mid">
+
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+    <style name="txt_samll_left">
+
+    <item name="android:gravity">left|center_vertical</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:textColorHint">#CCCCCC</item>
+
+    <item name="android:background">@android:color/transparent</item>
+
+</style>
+    <style name="txt_normal_left_blod">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="edittext_name">
+        <item name="android:background">@drawable/solid_bg</item>
+        <item name="android:lines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ems">10</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:textSize">10pt</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+
+    <style name="imgaview_small">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="biaoti">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">15pt</item>
+    </style>
+
+</resources>

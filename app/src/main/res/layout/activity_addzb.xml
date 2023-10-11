@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".7"
+
+
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/ireturn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_return"></Button>
+
+            <TextView
+                style="@style/txt_samll_mid_bold"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+
+                android:text="@string/addzb"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9.3"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                style="@style/txt_left_14_re_b"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+
+                android:layout_marginTop="10dp"
+                android:text="@string/addzb" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+
+                android:layout_marginTop="42dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/income"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:text="@string/income"
+                    android:textColor="@color/green"
+                    android:background="@drawable/solid_btn_gw"
+                    android:layout_marginRight="2.5dp"
+                    />
+                <Button
+                    android:id="@+id/pay"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:textColor="@color/line_gray"
+                    android:text="@string/pay"
+                    android:background="@drawable/solid_btn_grayw"
+                    />
+
+
+            </LinearLayout>
+            <TextView
+                style="@style/txt_left_14_re_b"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="102dp"
+                android:text="@string/biaoti" />
+
+
+            <EditText
+                style="@style/txt_minsamll_right"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="102dp"
+                android:hint="@string/bt"
+               />
+
+            <ImageView
+
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="152dp"
+
+                android:background="@color/line_gray" />
+
+
+
+            <TextView
+                style="@style/txt_left_14_re_b"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="152dp"
+                android:text="@string/date" />
+
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/txt_minsamll_right"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="152dp"
+
+                />
+
+            <ImageView
+
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="202dp"
+
+                android:background="@color/line_gray" />
+
+
+            <TextView
+                style="@style/txt_left_14_re_b"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="202dp"
+                android:text="@string/money" />
+
+
+            <EditText
+                style="@style/txt_minsamll_right"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="202dp"
+                android:hint="@string/bt"
+                />
+
+            <ImageView
+
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="252dp"
+
+                android:background="@color/line_gray" />
+
+
+
+            <TextView
+                style="@style/txt_left_14_re_b"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:layout_marginTop="252dp"
+                android:text="@string/bz" />
+
+
+            <EditText
+                style="@style/txt_minsamll_right"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="252dp"
+                android:hint="@string/bt"
+                />
+
+            <ImageView
+
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="302dp"
+
+                android:background="@color/line_gray" />
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="342dp"
+                android:background="@drawable/solid_bggreengray"
+                android:text="@string/save"
+                style="@style/btn_samll_mid"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<!-- custom_edittext_bg.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- 大圆形背景 -->
+        <shape
+            android:shape="oval">
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+    <item android:right="10dp">
+        <!-- 输入框的内边距，以留出空间以显示文本 -->
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>

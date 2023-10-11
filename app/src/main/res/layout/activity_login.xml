@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                style="@style/txt_samll_mid_bold"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:layout_centerVertical="true"
+                android:text="@string/action_sign_in"
+
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8.7"
+
+
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                style="@style/txt_normal_left_blod"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginTop="32dp"
+
+                android:text="@string/hyjr"
+
+                />
+
+
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="107dp"
+
+                android:text="@string/prompt_email"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/username"
+                android:hint="@string/prompt_email_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="136dp"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+
+                />
+
+            <ImageView
+                android:id="@+id/zcline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="186dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="203dp"
+
+                android:text="@string/prompt_password"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/password"
+                android:hint="@string/prompt_password_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="232dp"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                />
+            <ImageView
+                android:id="@+id/passwordline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="282dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+            <TextView
+                style="@style/txt_samll_left"
+                android:id="@+id/forget"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:layout_marginTop="292dp"
+                android:textSize="14sp"
+                android:gravity="right|center_vertical"
+                android:layout_alignParentRight="true"
+                android:text="@string/fogetmm"
+                android:textColor="#999999"
+
+                />
+
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                style="@style/btn_samll_mid"
+
+                android:layout_marginTop="340dp"
+
+                android:background="@drawable/solid_bggreengray"
+
+                android:enabled="false"
+                android:text="@string/action_sign_in"
+
+               />
+
+            <TextView
+                style="@style/txt_minsamll"
+                android:id="@+id/zc"
+                android:layout_width="fill_parent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:layout_marginTop="406dp"
+                android:textSize="14sp"
+
+                android:layout_alignParentRight="true"
+                android:text="@string/zc"
+                android:textColor="#999999"
+
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+            <CheckBox
+                android:id="@+id/c1"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+
+                android:layout_alignParentLeft="true"
+                android:button="@null"
+                android:background="@drawable/custom_checkbox"
+                android:scaleType="fitCenter"
+
+               />
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/txt_minsamll"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+
+                android:textSize="14sp"
+
+
+                android:text="@string/tt1"
+                android:textColor="#999999"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

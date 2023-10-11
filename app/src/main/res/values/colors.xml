@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF333333</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="darkblack">#676767</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#48C19E</color>
+    <color name="green_t">#4C48C19E</color>
+    <color name="green_dt">#9948C19E</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="line_grenen">#EFEFEF</color>
+
+    <color name="tm">@android:color/transparent</color>
+    <color name="grays">#808080</color>
+    <color name="grayd">#F5F5F5</color>
+    <color name="graygreen">#BFE9DD</color>
+    <color name="blue">#4899D0</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="darkblue">#4141F8</color>
+
+    <color name="darkPrimaryColor">#333333</color>
+    <color name="accentColor">#FF4081</color>
+    <color name="redtext">#F25A3F</color>
+
+    <color name="line_gray">#E8E8E8</color>
+    <color name="line_green">#2FB755</color>
+
+    <color name="line_graydark">#DDDDDD</color>
+</resources>

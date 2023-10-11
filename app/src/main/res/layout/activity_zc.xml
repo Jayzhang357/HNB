@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+
+
+
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/ireturn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_return"></Button>
+
+            <TextView
+                style="@style/txt_samll_mid_bold"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+
+                android:text="@string/zctext"
+
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7.7"
+
+
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                style="@style/txt_samll_mid_mess"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+
+
+
+                />
+
+
+            <TextView
+                style="@style/txt_normal_left_blod"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginTop="32dp"
+
+                android:text="@string/hyjr"
+
+                />
+
+
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="107dp"
+
+                android:text="@string/prompt_email"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/username"
+                android:hint="@string/prompt_email_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="136dp"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+
+                />
+
+            <ImageView
+                android:id="@+id/zcline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="186dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+
+
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="202dp"
+
+                android:text="@string/yzm"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/yzm"
+                android:hint="@string/yzm_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="232dp"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                />
+            <Button
+                android:id="@+id/hqzcm"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                style="@style/btn_samll_mid"
+
+                android:layout_marginTop="238dp"
+
+                android:background="@drawable/solid_bggreengray"
+                android:gravity="center"
+
+                android:text="@string/hqyzm"
+                android:textSize="13sp"
+
+                />
+
+            <ImageView
+                android:id="@+id/yzmline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="281dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+
+
+
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="299dp"
+
+                android:text="@string/prompt_password"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/password"
+                android:hint="@string/prompt_password_hint_t"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="328dp"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+
+                />
+            <ImageView
+                android:id="@+id/passwordline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="378dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+
+            <TextView
+                style="@style/txt_samll_left"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginTop="395dp"
+
+                android:text="@string/prompt_passwordag"
+
+                />
+
+            <EditText
+                style="@style/txt_samll_left"
+                android:id="@+id/passwordag"
+                android:hint="@string/prompt_password_hint_t"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="424dp"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+
+                />
+            <ImageView
+                android:id="@+id/passwordagline"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="474dp"
+                android:layout_alignParentLeft="true"
+                android:background="@color/line_gray" />
+
+
+            <Button
+                android:id="@+id/zc"
+                style="@style/btn_samll_mid"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginTop="498dp"
+
+                android:layout_marginEnd="31dp"
+                android:background="@drawable/solid_bggreengray"
+
+                android:enabled="false"
+                android:text="@string/zctext" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.6"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+                <CheckBox
+                    android:id="@+id/c1"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+
+                    android:layout_alignParentLeft="true"
+                    android:button="@null"
+                    android:background="@drawable/custom_checkbox"
+                    android:scaleType="fitCenter"
+
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/txt_minsamll"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+
+                android:textSize="14sp"
+
+
+                android:text="@string/tt1"
+                android:textColor="#999999"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
