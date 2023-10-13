@@ -79,15 +79,231 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class Hdk extends Activity {
+public class Hdk extends Activity implements View.OnClickListener{
 
     private ImageView add, deletetxt;
     private EditText searchcontent;
-    private Button delete, syb, complate;
+    private Button delete, syb, complate,ireturn;
     private Bitmap resizedBitmap;
     private RelativeLayout r6,rr1;
     private TextView t1;
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ireturn:
+               finish();
+                break;
 
+            case R.id.deletetxt:
+                searchcontent.setText("");
+                deletetxt.setVisibility(View.INVISIBLE);
+                listView.setVisibility(View.GONE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+// 在用户完成输入后隐藏键盘
+                imm.hideSoftInputFromWindow(searchcontent.getWindowToken(), 0);
+                break;
+            case R.id.t1:
+                 imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+// 在用户完成输入后隐藏键盘
+                imm.hideSoftInputFromWindow(searchcontent.getWindowToken(), 0);
+
+                if(searchcontent.getText().toString().length()==0)return;
+                Geocoder mCoder = new Geocoder(getBaseContext(), Locale.CHINESE);
+
+
+                List<Address> addresses = null;
+                try {
+
+                    addresses = mCoder.getFromLocation(mlatitude, mlongitude
+                            ,
+                            1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                LatLng chinaCenter = new LatLng(mlatitude, mlongitude);
+                String city = "北京";
+                if (addresses.size() > 0)
+                    city = addresses.get(0).getAdminArea().toString();
+                mSuggestionSearch.requestSuggestion(new SuggestionSearchOption()
+                        .city(city).location(chinaCenter)
+                        .keyword(searchcontent.getText().toString()));
+                break;
+            case R.id.add:
+                Point centerPoint = new Point(mMapView.getWidth() / 2, mMapView.getHeight() / 2);
+
+// 将屏幕坐标转换为地理坐标
+                LatLng centerLatLng = mBaiduMap.getProjection().fromScreenLocation(centerPoint);
+                points.add(centerLatLng);
+                showDraw();
+                break;
+            case R.id.delete:
+                if (mMum != null)
+                    mMum.remove();
+                if (mMum1 != null)
+                    mMum1.remove();
+
+                if (mTexttemp != null)
+                    mTexttemp.remove();
+                points.clear();
+                if (mPolylinesum != null)
+                    mPolylinesum.remove();
+                if (mMarkersum.size() > 0) {
+                    for (Overlay marker : mMarkersum) {
+                        marker.remove();
+                    }
+                    mMarkersum.clear(); // 移除标记
+                }
+                if (mTextsum.size() > 0) {
+                    for (Overlay marker : mTextsum) {
+                        marker.remove();
+                    }
+                    mTextsum.clear(); // 移除标记
+                }
+                complate.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.syb:
+                if (points.size() > 0) {
+                    if (mMum != null)
+                        mMum.remove();
+                    if (mMum1 != null)
+                        mMum1.remove();
+                    if (mTexttemp != null)
+                        mTexttemp.remove();
+                    points.remove(points.size() - 1);
+                    if (mPolylinesum != null)
+                        mPolylinesum.remove();
+                    if (mMarkersum.size() > 0) {
+                        for (Overlay marker : mMarkersum) {
+                            marker.remove();
+                        }
+                        mMarkersum.clear(); // 移除标记
+                    }
+                    if (mTextsum.size() > 0) {
+                        for (Overlay marker : mTextsum) {
+                            marker.remove();
+                        }
+                        mTextsum.clear(); // 移除标记
+                    }
+                    showDraw();
+                }
+                break;
+            case R.id.complate:
+                AlertDialog.Builder builder = new AlertDialog.Builder(Hdk.this);
+                builder
+                        .setMessage(getString(R.string.hdk_mes))
+                        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (points.size() < 3)
+                                    return;
+                                LatLngBounds.Builder builder = new LatLngBounds.Builder();
+
+// 将所有顶点添加到builder中
+                                for (LatLng point : points) {
+                                    builder.include(point);
+                                }
+
+// 创建一个包含所有顶点的LatLngBounds对象
+                                LatLngBounds bounds = builder.build();
+
+// 计算包含所有顶点的地图状态
+                                int padding = 500; // 可以根据需要调整边界留白
+                                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLngBounds(bounds, 100, 100, 200, 1200);
+
+// 将地图状态应用到地图上
+                                mBaiduMap.animateMapStatus(mapStatusUpdate);
+                                // 隐藏当前位置图标
+                                mBaiduMap.setMyLocationEnabled(false);
+                                try {
+                                    Thread.sleep(500);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                mBaiduMap.snapshot(callback);
+                                rmess.setVisibility(View.VISIBLE);
+                                center.setVisibility(View.GONE);
+                                rr1.setVisibility(View.INVISIBLE);
+                                setMessage();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss(); // Close the activity if the user cancels the update
+
+                                runOnUiThread(new Runnable() {
+
+                                    @Override
+                                    public void run() {
+                                        dialog.dismiss();
+                                    }
+                                });
+                            }
+                        });
+
+                AlertDialog dialog = builder.create();
+                dialog.setCancelable(false);
+                dialog.show();
+                break;
+            case R.id.type:
+                if (getType) {
+                    type.setImageResource(R.drawable.map_icon_2d);
+                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+                    getType = false;
+                } else {
+                    type.setImageResource(R.drawable.map_icon_3d);
+                    getType = true;
+                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
+                }
+                showDraw();
+                break;
+
+            case R.id.location:
+                if(rmess.getVisibility()==View.VISIBLE)
+                {
+                     chinaCenter = new LatLng(centerPointtemp.latitude, centerPointtemp.longitude); // 中国中心点的经纬度坐标
+                    mBaiduMap.setMapStatus(MapStatusUpdateFactory.newLatLng(chinaCenter));
+                    // 获取BaiduMap对象
+                    // 获取BaiduMap对象
+                    BaiduMap baiduMap = mMapView.getMap();
+
+// 获取当前地图的地理位置
+                    MapStatus mapStatus = baiduMap.getMapStatus();
+
+// 计算新的地图中心位置
+                    LatLng currentCenter = mapStatus.target;
+                    Projection projection = baiduMap.getProjection();
+                    Point currentCenterPoint = projection.toScreenLocation(currentCenter);
+
+                    int verticalOffsetInPixels = (int) (100 * getResources().getDisplayMetrics().density);
+                    Point newCenterPoint = new Point(currentCenterPoint.x, currentCenterPoint.y + verticalOffsetInPixels);
+                    LatLng newCenter = projection.fromScreenLocation(newCenterPoint);
+
+// 创建MapStatusUpdate对象，将地图中心设置为新位置
+                    MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(newCenter);
+
+// 将地图状态应用到地图上
+                    baiduMap.animateMapStatus(mapStatusUpdate);
+
+
+                }
+                else {
+                     chinaCenter = new LatLng(mlatitude, mlongitude); // 中国中心点的经纬度坐标
+                    mBaiduMap.setMapStatus(MapStatusUpdateFactory.newLatLng(chinaCenter));
+                }
+
+                break;
+            case R.id.l1:
+                rmess.setVisibility(View.GONE);
+                center.setVisibility(View.VISIBLE);
+                rr1.setVisibility(View.VISIBLE);
+
+                break;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -280,21 +496,11 @@ public class Hdk extends Activity {
 
     private RelativeLayout  rmess;
     private void iniView() {
+        ireturn= (Button) findViewById(R.id.ireturn);
+        ireturn.setOnClickListener(this);
         rmess = (RelativeLayout) findViewById(R.id.rmess);
         deletetxt = (ImageView) findViewById(R.id.deletetxt);
-        deletetxt.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                searchcontent.setText("");
-                deletetxt.setVisibility(View.INVISIBLE);
-                listView.setVisibility(View.GONE);
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-// 在用户完成输入后隐藏键盘
-                imm.hideSoftInputFromWindow(searchcontent.getWindowToken(), 0);
-            }
-        });
+        deletetxt.setOnClickListener(this);
         listView = (ListView) findViewById(R.id.listView);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -332,187 +538,19 @@ public class Hdk extends Activity {
             public void afterTextChanged(Editable s) {
             }//文本改变之后执行
         });
-        t1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                // 获取输入管理器
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-// 在用户完成输入后隐藏键盘
-                imm.hideSoftInputFromWindow(searchcontent.getWindowToken(), 0);
-
-                if(searchcontent.getText().toString().length()==0)return;
-                Geocoder mCoder = new Geocoder(getBaseContext(), Locale.CHINESE);
-
-
-                List<Address> addresses = null;
-                try {
-
-                    addresses = mCoder.getFromLocation(mlatitude, mlongitude
-                            ,
-                            1);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                LatLng chinaCenter = new LatLng(mlatitude, mlongitude);
-                String city = "北京";
-                if (addresses.size() > 0)
-                    city = addresses.get(0).getAdminArea().toString();
-                mSuggestionSearch.requestSuggestion(new SuggestionSearchOption()
-                        .city(city).location(chinaCenter)
-                        .keyword(searchcontent.getText().toString()));
-
-            }
-        });
+        t1.setOnClickListener(this);
         r6 = (RelativeLayout) findViewById(R.id.r6);
         rr1 = (RelativeLayout) findViewById(R.id.rr1);
         rr1.setVisibility(View.VISIBLE);
         add = (ImageView) findViewById(R.id.add);
-        add.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                Point centerPoint = new Point(mMapView.getWidth() / 2, mMapView.getHeight() / 2);
-
-// 将屏幕坐标转换为地理坐标
-                LatLng centerLatLng = mBaiduMap.getProjection().fromScreenLocation(centerPoint);
-                points.add(centerLatLng);
-                showDraw();
-
-            }
-        });
+        add.setOnClickListener(this);
         delete = (Button) findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                if (mMum != null)
-                    mMum.remove();
-                if (mMum1 != null)
-                    mMum1.remove();
-
-                if (mTexttemp != null)
-                    mTexttemp.remove();
-                points.clear();
-                if (mPolylinesum != null)
-                    mPolylinesum.remove();
-                if (mMarkersum.size() > 0) {
-                    for (Overlay marker : mMarkersum) {
-                        marker.remove();
-                    }
-                    mMarkersum.clear(); // 移除标记
-                }
-                if (mTextsum.size() > 0) {
-                    for (Overlay marker : mTextsum) {
-                        marker.remove();
-                    }
-                    mTextsum.clear(); // 移除标记
-                }
-                complate.setVisibility(View.INVISIBLE);
-
-            }
-        });
+        delete.setOnClickListener(this);
         syb = (Button) findViewById(R.id.syb);
-        syb.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                if (points.size() > 0) {
-                    if (mMum != null)
-                        mMum.remove();
-                    if (mMum1 != null)
-                        mMum1.remove();
-                    if (mTexttemp != null)
-                        mTexttemp.remove();
-                    points.remove(points.size() - 1);
-                    if (mPolylinesum != null)
-                        mPolylinesum.remove();
-                    if (mMarkersum.size() > 0) {
-                        for (Overlay marker : mMarkersum) {
-                            marker.remove();
-                        }
-                        mMarkersum.clear(); // 移除标记
-                    }
-                    if (mTextsum.size() > 0) {
-                        for (Overlay marker : mTextsum) {
-                            marker.remove();
-                        }
-                        mTextsum.clear(); // 移除标记
-                    }
-                    showDraw();
-                }
-
-
-            }
-        });
+        syb.setOnClickListener(this);
         complate = (Button) findViewById(R.id.complate);
         complate.setVisibility(View.INVISIBLE);
-        complate.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Hdk.this);
-                builder
-                        .setMessage(getString(R.string.hdk_mes))
-                        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (points.size() < 3)
-                                    return;
-                                LatLngBounds.Builder builder = new LatLngBounds.Builder();
-
-// 将所有顶点添加到builder中
-                                for (LatLng point : points) {
-                                    builder.include(point);
-                                }
-
-// 创建一个包含所有顶点的LatLngBounds对象
-                                LatLngBounds bounds = builder.build();
-
-// 计算包含所有顶点的地图状态
-                                int padding = 500; // 可以根据需要调整边界留白
-                                MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLngBounds(bounds, 100, 100, 200, 1200);
-
-// 将地图状态应用到地图上
-                                mBaiduMap.animateMapStatus(mapStatusUpdate);
-                                // 隐藏当前位置图标
-                                mBaiduMap.setMyLocationEnabled(false);
-                                try {
-                                    Thread.sleep(500);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                mBaiduMap.snapshot(callback);
-                                rmess.setVisibility(View.VISIBLE);
-                                center.setVisibility(View.GONE);
-                                rr1.setVisibility(View.INVISIBLE);
-                                setMessage();
-                                dialog.dismiss();
-                            }
-                        })
-                        .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss(); // Close the activity if the user cancels the update
-
-                                runOnUiThread(new Runnable() {
-
-                                    @Override
-                                    public void run() {
-                                        dialog.dismiss();
-                                    }
-                                });
-                            }
-                        });
-
-                AlertDialog dialog = builder.create();
-                dialog.setCancelable(false);
-                dialog.show();
-
-
-            }
-        });
+        complate.setOnClickListener(this);
         mMapView = (MapView) findViewById(R.id.bmapView);
         mBaiduMap = mMapView.getMap();
 
@@ -547,75 +585,12 @@ public class Hdk extends Activity {
 // 设置标记拖拽监听器
         mBaiduMap.setOnMarkerDragListener(markerDragListener);
         type = (ImageView) findViewById(R.id.type);
-        type.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                if (getType) {
-                    type.setImageResource(R.drawable.map_icon_2d);
-                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
-                    getType = false;
-                } else {
-                    type.setImageResource(R.drawable.map_icon_3d);
-                    getType = true;
-                    mBaiduMap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
-                }
-                showDraw();
-            }
-        });
+        type.setOnClickListener(this);
         location = (ImageView) findViewById(R.id.location);
-        location.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                if(rmess.getVisibility()==View.VISIBLE)
-                {
-                    LatLng chinaCenter = new LatLng(centerPointtemp.latitude, centerPointtemp.longitude); // 中国中心点的经纬度坐标
-                    mBaiduMap.setMapStatus(MapStatusUpdateFactory.newLatLng(chinaCenter));
-                    // 获取BaiduMap对象
-                    // 获取BaiduMap对象
-                    BaiduMap baiduMap = mMapView.getMap();
-
-// 获取当前地图的地理位置
-                    MapStatus mapStatus = baiduMap.getMapStatus();
-
-// 计算新的地图中心位置
-                    LatLng currentCenter = mapStatus.target;
-                    Projection projection = baiduMap.getProjection();
-                    Point currentCenterPoint = projection.toScreenLocation(currentCenter);
-
-                    int verticalOffsetInPixels = (int) (100 * getResources().getDisplayMetrics().density);
-                    Point newCenterPoint = new Point(currentCenterPoint.x, currentCenterPoint.y + verticalOffsetInPixels);
-                    LatLng newCenter = projection.fromScreenLocation(newCenterPoint);
-
-// 创建MapStatusUpdate对象，将地图中心设置为新位置
-                    MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLng(newCenter);
-
-// 将地图状态应用到地图上
-                    baiduMap.animateMapStatus(mapStatusUpdate);
-
-
-                }
-                else {
-                    LatLng chinaCenter = new LatLng(mlatitude, mlongitude); // 中国中心点的经纬度坐标
-                    mBaiduMap.setMapStatus(MapStatusUpdateFactory.newLatLng(chinaCenter));
-                }
-
-            }
-        });
+        location.setOnClickListener(this);
 
         ll1= (LinearLayout) findViewById(R.id.ll1);
-        ll1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                rmess.setVisibility(View.GONE);
-                center.setVisibility(View.VISIBLE);
-                rr1.setVisibility(View.VISIBLE);
-            }
-        });
+        ll1.setOnClickListener(this);
         ll2= (LinearLayout) findViewById(R.id.ll2);
         ll3= (LinearLayout) findViewById(R.id.ll3);
         ll4= (LinearLayout) findViewById(R.id.ll4);

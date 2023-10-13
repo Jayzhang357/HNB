@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
 
-    android:paddingTop="@dimen/activity_vertical_margin"
+
 
     >
 
@@ -446,6 +446,7 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
+                    android:id="@+id/cm"
                     android:layout_width="76dp"
                     android:layout_height="fill_parent"
                     android:src="@drawable/index_icon_dd" />
@@ -466,13 +467,14 @@
                     android:layout_height="20dp"
                     android:gravity="center"
                     android:text="@string/cm"
-                    android:textColor="#666666"
+                    android:textColor="@color/darkGray"
                     android:textSize="11sp" />
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/sy"
                 android:layout_width="125dp"
                 android:layout_height="56dp"
                 android:layout_alignParentBottom="true"
@@ -492,13 +494,14 @@
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
                     android:text="@string/sy"
-                    android:textStyle="bold"
-                    android:textColor="#333333"
+
+                    android:textColor="@color/darkPrimaryColor"
                     android:textSize="11sp" />
             </LinearLayout>
 
 
             <LinearLayout
+                android:id="@+id/admin"
                 android:layout_width="125dp"
                 android:layout_height="56dp"
                 android:layout_alignParentRight="true"
@@ -519,7 +522,7 @@
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
                     android:text="@string/me"
-                    android:textColor="#666666"
+                    android:textColor="@color/darkGray"
                     android:textSize="11sp" />
             </LinearLayout>
 

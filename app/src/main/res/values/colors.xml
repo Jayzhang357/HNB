@@ -14,7 +14,7 @@
     <color name="green_dt">#9948C19E</color>
     <color name="gray">#CCCCCC</color>
     <color name="line_grenen">#EFEFEF</color>
-
+    <color name="origen">#EA654E</color>
     <color name="tm">@android:color/transparent</color>
     <color name="grays">#808080</color>
     <color name="grayd">#F5F5F5</color>
@@ -26,6 +26,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="darkblue">#4141F8</color>
 
+
+    <color name="darkGray">#666666</color>
     <color name="darkPrimaryColor">#333333</color>
     <color name="accentColor">#FF4081</color>
     <color name="redtext">#F25A3F</color>

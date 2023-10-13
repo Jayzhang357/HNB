@@ -7,34 +7,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
-import com.wl.entry.JZXX;
-import com.wl.entry.JZZT;
-import com.wl.entry.Zhengben;
+import com.wl.entry.Device;
 import com.wl.hnb.R;
 
 import java.util.List;
 
 
-public class DataAdapterzb extends BaseAdapter {
+public class DataAdapterdevice extends BaseAdapter {
     private int[] colors = new int[]{0xff626569, 0xff4f5257};
     SparseBooleanArray selected;
     boolean isSingle = true;
     int old = -1;
 
     private class ViewHolder {
-        private TextView month;
-        private ImageView type;
-        private TextView name;
-        private TextView time;
-        private TextView money;
-        private LinearLayout content;
-        private ImageView line;
+
+
+        public TextView devicename;
+        public TextView typename;
+        public TextView carnumber;
+        public TextView stlyecar;
+        public TextView typecar;
+        public TextView date;
+
     }
 
     private List<Object> list;
@@ -42,7 +38,7 @@ public class DataAdapterzb extends BaseAdapter {
     private LayoutInflater mInflater;
     private Context mContext;
 
-    public DataAdapterzb(Context context, List<Object> data) {
+    public DataAdapterdevice(Context context, List<Object> data) {
         mInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         list = data;
@@ -71,15 +67,15 @@ public class DataAdapterzb extends BaseAdapter {
         View view = convertView;
         ViewHolder viewHolder = new ViewHolder();
         if (view == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.activity_zb_display, parent, false);
-            viewHolder.content = (LinearLayout) view.findViewById(R.id.content);
-            viewHolder.month = (TextView) view.findViewById(R.id.month);
-            viewHolder.type = (ImageView) view.findViewById(R.id.type);
-            viewHolder.name = (TextView) view.findViewById(R.id.name);
-            viewHolder.time = (TextView) view.findViewById(R.id.time);
-            viewHolder.money = (TextView) view.findViewById(R.id.money);
+            view = LayoutInflater.from(mContext).inflate(R.layout.activity_mydevice_display, parent, false);
+            viewHolder.devicename = (TextView) view.findViewById(R.id.devicename);
+            viewHolder.typename = (TextView) view.findViewById(R.id.typename);
+            viewHolder.carnumber = (TextView) view.findViewById(R.id.carnumber);
+            viewHolder.stlyecar = (TextView) view.findViewById(R.id.stlyecar);
+            viewHolder.typecar = (TextView) view.findViewById(R.id.typecar);
+            viewHolder.date = (TextView) view.findViewById(R.id.date);
 
-            viewHolder.line = (ImageView) view.findViewById(R.id.line);
+
             view.setTag(viewHolder);
         } else {
             //int colorPos = position % colors.length;
@@ -91,28 +87,16 @@ public class DataAdapterzb extends BaseAdapter {
         }
 
 
-        Zhengben info = (Zhengben) list.get(position);
-        if (String.valueOf(info.month).length() > 0) {
+        Device info = (Device) list.get(position);
 
-            viewHolder.month.setText(String.valueOf(info.month));
-            viewHolder.month.setVisibility(View.VISIBLE);
-            viewHolder.content.setVisibility(View.GONE);
-            viewHolder.line.setVisibility(View.GONE);
+        viewHolder.devicename .setText(String.valueOf(info.devicename));
+        viewHolder.typename .setText(String.valueOf(info.typename));
+        viewHolder.carnumber.setText(String.valueOf(info.carnumber));
+        viewHolder.stlyecar .setText(String.valueOf(info.stlyecar));
+        viewHolder.typecar .setText(String.valueOf(info.typecar));
+        viewHolder.date .setText(String.valueOf(info.date));
 
-        } else {
-            viewHolder.month.setVisibility(View.GONE);
-            viewHolder.content.setVisibility(View.VISIBLE);
-            viewHolder.line.setVisibility(View.VISIBLE);
-            if (info.type == 0) viewHolder.type.setImageResource(R.drawable.dill_icon_income);
-            else
-                viewHolder.type.setImageResource(R.drawable.dill_icon_pay);
-            viewHolder.name.setText(String.valueOf(info.name));
-            viewHolder.time.setText(String.valueOf(info.time));
 
-            viewHolder.money.setText(String.valueOf(info.money));
-
-        }
-        //    viewHolder.content10.setText(String.valueOf(info.Lon_B));
 
         if (selected.get(position)) {
             //view.setBackgroundResource(Color.BLUE);
