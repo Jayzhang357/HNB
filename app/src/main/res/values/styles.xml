@@ -12,6 +12,7 @@
         <item name="android:gravity">left|center_vertical</item>
         <item name="android:textColor">#44B594</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/regular</item>
 
     </style>
 
@@ -50,6 +51,14 @@
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/medium</item>
     </style>
+    <style name="txt_left_14_re_r">
+
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
 
     <style name="txt_zwlx_g">
 
@@ -74,6 +83,7 @@
         <item name="android:gravity">right|center_vertical</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/regular</item>
 
     </style>
     <style name="txt_zbxq_bt">
@@ -83,7 +93,13 @@
         <item name="android:textSize">13sp</item>
         <item name="android:fontFamily">@font/regular</item>
     </style>
+    <style name="txt_zbxq_bt_right">
 
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
     <style name="txt_zbxq_bt_b">
 
         <item name="android:gravity">left|center_vertical</item>
@@ -234,6 +250,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/regular</item>
 
     </style>
 
@@ -253,13 +270,13 @@
 
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">15sp</item>
-
+          <item name="android:fontFamily">@font/regular</item>
 
     </style>
 
     <style name="txt_samll_left_16">
         <item name="android:gravity">left|center_vertical</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
 

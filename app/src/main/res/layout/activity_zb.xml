@@ -172,7 +172,8 @@
                     android:layout_height="match_parent"
 
                     android:cacheColorHint="#00000000"
-
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
                     android:descendantFocusability="blocksDescendants"
                     android:fadingEdge="none"
                     android:focusable="true"

@@ -83,5 +83,12 @@
 
         
     </LinearLayout>
-
+    <ImageView
+        android:id="@+id/line"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_grenen" />
 </RelativeLayout>

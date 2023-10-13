@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class Update1 extends Activity {
+public class Update1 extends Activity implements View.OnClickListener{
 
     private Button btnFinish,btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zc);
+        setContentView(R.layout.recyclerview__devivce_item_layout);
         iniView();
     }
 
@@ -23,4 +23,12 @@ public class Update1 extends Activity {
 
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ireturn:
+                finish();
+                break;
+        }
+    }
 }

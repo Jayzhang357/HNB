@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">差分宝</string>
-    <string name="Version" translatable="false">CFBV1.0.0T14</string>
+    <string name="Version" translatable="false">1.0.0</string>
 
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -73,14 +73,18 @@
     <string name="money">金额</string>
     <string name="yuan">元</string>
     <string name="bz">备注</string>
+    <string name="bz_h">请输入备注</string>
     <string name="bt">必填</string>
 
     <string name="save">保存</string>
+    <string name="wdnj">我的农机</string>
     <string name="zdxq">账单详情</string>
-
+    <string name="jb">解绑</string>
     <string name="jobname">作业名称</string>
     <string name="username">客户姓名</string>
+    <string name="username_h">请输入客户姓名</string>
     <string name="userphone">客户电话</string>
+    <string name="userphone_h">请输入客户电话</string>
     <string name="dj">单价（元/亩）</string>
 
     <string name="dzdk">地块地址</string>
@@ -97,6 +101,7 @@
     <string name="ljjkcl">累计监控车辆</string>
     <string name="ddq">打点器</string>
     <string name="xf">续费</string>
+    <string name="xfdd">续费订单</string>
     <string name="cm">测亩</string>
     <string name="me">我的</string>
     <string name="ycl">已测量</string>
@@ -134,5 +139,8 @@
     <string name="dkname">地块名称</string>
     <string name="zwlx">作物类型</string>
     <string name="fz">分组</string>
-
+    <string name="grxx">个人信息</string>
+    <string name="xgmm">修改密码</string>
+    <string name="bbsj">版本升级</string>
+    <string name="tcdl">退出登录</string>
 </resources>
